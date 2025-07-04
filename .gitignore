@@ -1,0 +1,15 @@
+# Folders
+#Testing/
+#Demos/
+
+# File Extensions
+*.exe
+*.json
+*.txt
+*.mov
+*.mkv
+*.mp4
+
+# Files
+.gitignore
+.gitattributes
