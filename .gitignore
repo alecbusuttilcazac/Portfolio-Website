@@ -1,9 +1,7 @@
 # Folders
-#Testing/
-#Demos/
+#FolderName/
 
 # File Extensions
-*.exe
 *.json
 *.txt
 *.mov
@@ -11,5 +9,5 @@
 *.mp4
 
 # Files
-.gitignore
-.gitattributes
+#.gitignore
+#.gitattributes
