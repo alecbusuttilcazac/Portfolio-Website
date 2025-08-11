@@ -44,10 +44,25 @@ img {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--primary-colour);
+    color: var(--text-colour);
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-colour);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-colour);
 }
 
 .container {
@@ -83,6 +98,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Needed for positioning the mobile menu */
 }
 
 .logo {
@@ -95,18 +111,12 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-.img-logo {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-    transition: transform 0.3s ease;
+/* Hide the hamburger menu by default on larger screens */
+.hamburger-menu {
+    display: none;
 }
 
-/* .logo:hover {
-    background-color: var(--light-grey);
-} */
-
+/* Mobile navigation menu styling */
 .nav-links {
     display: flex;
     list-style: none;
@@ -128,6 +138,7 @@ h1 {
     color: var(--accent-colour);
 }
 
+/* --- HERO Section --- */
 .hero {
     background-image: linear-gradient(to bottom, #004489, #00021b); /* Darker gradient */
     color: white;
@@ -181,7 +192,8 @@ h1 {
 /* --- About Section --- */
 .about-section {
     background-color: var(--background-colour);
-    padding: 4rem 0;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
 }
 
 .about-content {
@@ -219,16 +231,17 @@ h1 {
     margin-bottom: 1rem;
 }
 
+/* --- Tech Stack Section --- */
 .tech-stack-section {
     background-color: var(--card-bg);
-    padding: 4rem 0;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
 }
 
 .tech-stack-grid {
-    /* Use flexbox for better centering and wrapping */
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center items horizontally */
+    justify-content: center;
     gap: 1rem;
     text-align: center;
 }
@@ -238,8 +251,7 @@ h1 {
     padding-top: 1.5rem;
     border-radius: 0.75rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Fixed size for each item */
-    width: 8rem; 
+    width: 8rem;
     height: 8rem;
     display: flex;
     flex-direction: column;
@@ -249,6 +261,7 @@ h1 {
 
 .tech-stack-item:hover {
     transform: translateY(-5px);
+    background-color: #1d1e2c;
 }
 
 .tech-stack-item p {
@@ -256,9 +269,11 @@ h1 {
     color: var(--text-colour);
 }
 
+/* --- Portfolio Section --- */
 .portfolio-section {
     background-color: var(--background-colour);
-    padding: 4rem 0;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 }
 
 .portfolio-grid {
@@ -268,7 +283,7 @@ h1 {
 }
 
 .project-card {
-    background-color: var(--card-bg); /* Slightly lighter than card bg */
+    background-color: var(--card-bg);
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     overflow: hidden;
@@ -390,6 +405,96 @@ h1 {
 }
 
 /* --- Responsive Design --- */
+@media (max-width: 767px) {
+    /* Mobile-first adjustments for the header */
+    .header {
+        padding: 0.75rem 1rem; /* Adjust padding for mobile header */
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 3, 41, 0.7);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li a {
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        position: relative;
+        z-index: 1001; /* Ensure it's above the menu */
+    }
+
+    .hamburger-menu .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--accent-colour);
+        margin: 5px auto;
+        transition: all 0.3s ease;
+        border-radius: 0.25rem;
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .hero-title {
+        font-size: 2.25rem; /* Smaller font size for mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    .about-flex-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-image {
+        margin-bottom: 1rem;
+    }
+
+    .about-text {
+        text-align: left;
+    }
+}
+
 @media (min-width: 768px) {
     .about-flex-container {
         flex-direction: row;
