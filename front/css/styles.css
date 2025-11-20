@@ -247,11 +247,11 @@ h3 {
 }
 
 .tech-stack-item {
-    background-color: #151622;
+    background-color: #2b2e60;
     padding-top: 1.5rem;
     border-radius: 0.75rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 8rem;
+    width: 7rem;
     height: 8rem;
     display: flex;
     flex-direction: column;
@@ -261,12 +261,16 @@ h3 {
 
 .tech-stack-item:hover {
     transform: translateY(-5px);
-    background-color: #1d1e2c;
+    background-color: #21225e;
 }
 
 .tech-stack-item p {
     font-weight: 600;
     color: var(--text-colour);
+}
+
+.section-subtitle {
+    text-align: center;
 }
 
 /* --- Portfolio Section --- */
