@@ -315,6 +315,7 @@ h3 {
     font-weight: 600;
     color: var(--text-colour);
     margin-bottom: 0.5rem;
+    margin-top: -0.5rem;
 }
 
 .project-description {
