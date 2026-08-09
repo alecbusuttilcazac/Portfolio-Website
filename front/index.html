@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Alexander Busuttil Cazac">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css?v=2.2">
     <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
     <title>Alexander's Portfolio - Home</title>
@@ -159,7 +157,17 @@
     <section id="portfolio" class="portfolio-section">
         <div class="container">
             <h1 class="section-title">My Portfolio</h1>
-            <div class="portfolio-grid">    
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <img src="resources/img/cbir.png" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Content-Based Image Retrieval System</h3>
+                        <p class="project-description">
+                            A CBIR system built in Python using OpenCV, which returns visually-similar images using a weighted combination of HSV, HOG and BoVW descriptors.
+                        </p>
+                        <a href="https://github.com/alecbusuttilcazac/Content-Based-Image-Retrieval-System" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
                 <div class="project-card">
                     <img src="resources/img/CSV.png" class="project-image">
                     <div class="project-info">
@@ -253,7 +261,6 @@
             <p>&copy; 202622 Alexander Busuttil Cazac. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://github.com/alecbusuttilcazac">GitHub</a>
-                <a href="https://www.instagram.com/alexanderbusuttilcazac/?hl=en">Instagram</a>
             </div>
         </div>
     </footer>
